@@ -1,0 +1,25 @@
+------------how to create Email Account Verification using Laravel-----------
+
+cmd:
+=> php artisan make:auth
+
+mailtrap:
+=> choose Laravel on integration
+=>copy code
+
+
+Visual code studio:
+
+.env:
+=> paste code replace already exists from line 26
+
+user.php:
+
+=> add implements MustVerifyEmail like this:
+class User extends Authenticatable implements MustVerifyEmail 
+
+web.php:
+=> add in Auth::routes
+  ['verify'=> true]
+=>add in Route::get
+  ->middleware('verified')
